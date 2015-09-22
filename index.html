@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="quizApp">
+<head lang="en">
+    <base href="/Quiz/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Holmsuk Quiz</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body>
+<div class="main-holder">
+    <div class="main-content-holder">
+        <!--side menu-->
+        <div class="menu-holder" ng-controller="MenuCtrl">
+            <button ng-click="openMenu()" class="btn-menu pointer"><i class="fa fa-bars"></i></button>
+            <div ng-class="menuClass">
+                <ul class="menu">
+                    <a href="#" ng-click="closeMenu()">
+                        <li class="title-logo active">
+                            holmsuk
+                            <button ng-click="closeMenu()" class="btn-menu-close pointer"><i class="fa fa-bars"></i>
+                            </button>
+                        </li>
+                    </a>
+                    <a href="#" ng-click="closeMenu()">
+                        <li class="fa fa-bar-chart">
+                            <span class="menu-item">Progress</span>
+                        </li>
+                    </a>
+                    <a href="#" ng-click="closeMenu()">
+                        <li class="fa fa-leanpub">
+                            <span class="menu-item">Lessons</span>
+                        </li>
+                    </a>
+                    <a href="#" ng-click="closeMenu()">
+                        <li class="fa fa-cog">
+                            <span class="menu-item">Settings</span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <!--end side menu-->
+
+        <!--content-->
+        <div class="content-holder">
+            <div class="question" ng-view=""></div>
+        </div>
+        <!--end content-->
+    </div>
+</div>
+</body>
+</html>

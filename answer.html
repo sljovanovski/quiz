@@ -1,0 +1,45 @@
+<div class="top-area">
+    <div class="text-center">
+
+        <!--show only if the answer is correct-->
+        <p ng-show="isCorrect" class="question-title text-green">
+            Good Job!<br/>
+            {{question.answerTitle}}
+        </p>
+
+        <!--show only if the answer is wrong-->
+        <p ng-show="!isCorrect" class="question-title text-red">
+            Wrong! <br/>
+            {{question.answerTitle}}
+        </p>
+
+        <h3 align="center">
+            <img src="{{question.image}}" class="img-circle"/>
+        </h3>
+
+        <p class="text-green replacement">
+            Healthy Replacement
+            <br>
+            <i class="fa fa-arrow-down"></i>
+        </p>
+    </div>
+</div>
+<div class="range-area">
+    <div class="text-center">
+        <h3 align="center">
+            <img src="{{question.replacementImage}}" class="img-circle-less"/>
+        </h3>
+
+        <p class="article-replacement-name">
+            {{question.replacement}}
+        </p>
+
+    </div>
+</div>
+<div class="bottom-area">
+    <div class="text-center">
+        <a href="{{next}}">
+            <button class="btn-next" ng-click="answerResult()">{{btnNext}}</button>
+        </a>
+    </div>
+</div>

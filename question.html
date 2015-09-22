@@ -1,0 +1,44 @@
+<div class="top-area">
+    <div class="text-center">
+
+        <!--number of pages-->
+        <div class="pager text-center">
+            <div ng-repeat="question in questions" class="question-page-number"
+                 ng-class="question.active?' active-question':''">{{question.num}}
+            </div>
+        </div>
+        <!--end number of pages-->
+
+        <!--meal description-->
+        <p class="question-title">{{question.title}}</p>
+
+        <h3 align="center">
+            <img src="{{question.image}}" class="img-circle"/>
+        </h3>
+
+        <p class="article-name">{{question.meal}}</p>
+        <!--end meal description-->
+    </div>
+</div>
+<div class="range-area">
+    <div class="text-center">
+
+        <!--range area-->
+        <p class="spoons-count">{{measurement}}</p>
+
+        <p>{{question.measurement}}</p>
+
+        <p align="center" class="range slider">
+            <input type="range" id="r4" min="{{question.min}}" max="{{question.max}}" value="0" step="{{question.step}}"
+                   ng-change="changeRange()" ng-model="range"/>
+        </p>
+        <!--end range area-->
+    </div>
+</div>
+<div class="bottom-area">
+    <div class="text-center">
+        <a href="question/{{questionId}}/answer/{{measurement}}">
+            <button class="btn-next">NEXT</button>
+        </a>
+    </div>
+</div>
