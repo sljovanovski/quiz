@@ -1,5 +1,6 @@
 # Quiz
 Angular Quiz:
+  - Angular.js
   - Responsive Design
   - Custom CSS
  
